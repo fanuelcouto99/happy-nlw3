@@ -2,47 +2,22 @@
 
 /* Retirando todas as margens e preenchimentos da pagina */
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    height: 100vh;
-    color: white;
+  height: 100vh;
+  color: white;
 }
 
-body, input, button, textarea {
-    font: 400 1.8rem/1 'Nunito', sans-serif;
-}    
-
-#page-landing {
-    /* Aplicando gradiente na tela, informado o grau que ai ser aplicado e iniciando na primeira cor e terminando na segunda, informando a proporção do degrade */
-    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-}
-
-#container {
-    margin: auto;
-}
-
-.location, h1, .visit p {
-    height: 16vh;
-}
-
-.visit a {
-    width: 8rem;
-    height: 8rem;
-    background: #ffd666;
-    border: none;
-    border-radius: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+body,
+input,
+button,
+textarea {
+  font: 400 1.8rem/1 "Nunito", sans-serif;
 }
