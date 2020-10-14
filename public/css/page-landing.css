@@ -53,3 +53,8 @@ main h1 {
 .visit a {
   animation-delay: 250ms;
 }
+
+/* Configurando CSS para desktop */
+@media (min-width: 760px) {
+  
+}
