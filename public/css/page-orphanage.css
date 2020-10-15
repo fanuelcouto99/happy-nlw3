@@ -1,15 +1,81 @@
 #page-orphanage {
-    display: flex;
-    min-height: 100vh;
+  display: flex;
+  min-height: 100vh;
 }
 
 aside.sidebar {
-    position: fixed;
-    height: 100%;
-    padding: 3.2rem 2.4rem;
-    background: #15C3D6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  position: fixed;
+  height: 100%;
+  padding: 3.2rem 2.4rem;
+  background: #15c3d6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+aside.sidebar footer button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: #12afcb;
+  border-radius: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+aside.sidebar footer button:hover {
+  background: #17d6eb;
+}
+
+.whith-sidebar {
+  padding-left: 110px;
+}
+
+/* Configurando div detalhes da pagina */
+.orphanage-details {
+  width: 70rem;
+  margin: 6.4rem auto;
+  background: white;
+  border: 1px solid #d3e2e5;
+  border-radius: 2rem;
+}
+
+/* Pegando a imagem do primeiro nivel da div */
+.orphanage-details > img {
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 1.6rem;
+  margin: 16px 40px 0;
+}
+
+.images button {
+  border: 0;
+  border-radius: 2rem;
+  background: none;
+  height: 8.8rem;
+  cursor: pointer;
+  /* Configurando para limitar o conteudo do botão */
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.images button:hover,
+.images button.active {
+  opacity: 1;
+}
+
+.images button img {
+  width: 100%;
+  height: 8.8rem;
+  object-fit: cover;
 }
