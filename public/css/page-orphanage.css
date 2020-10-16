@@ -35,6 +35,10 @@ aside.sidebar footer button:hover {
   padding-left: 110px;
 }
 
+main {
+  flex: 1;
+}
+
 /* Configurando div detalhes da pagina */
 .orphanage-details {
   width: 70rem;
