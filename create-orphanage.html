@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="./public/css/main.css">
     <link rel="stylesheet" href="./public/css/animations.css">
     <link rel="stylesheet" href="./public/css/sidebar.css">
+    <link rel="stylesheet" href="./public/css/map.css">
+    <link rel="stylesheet" href="./public/css/forms.css">
     <link rel="stylesheet" href="./public/css/page-create-orphanage.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
@@ -28,7 +30,7 @@
 
 <body>
 
-    <div id="create-orphanage">
+    <div id="page-create-orphanage">
 
         <!-- Barra Lateral da Pagina -->
         <aside class="animate-right sidebar">
@@ -45,6 +47,45 @@
         <!-- Conteúdo principal da pagina -->
         <main class="animate-appear whith-sidebar">
 
+            <!-- Formulario para inserção dos dados -->
+            <form action="">
+
+                <fieldset>
+                    <legend>Dados</legend>
+
+                    <div class="map-container">
+                        <div id="mapid"></div>
+
+
+                        <footer>
+                            <a href="#" id="select-point">
+                                Clique no mapa para adicionar a localização
+                            </a>
+                        </footer>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="name">Nome</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+
+                    <div class="input-block">
+                        <label for="about">Sobre <span>Máximo de 300 caracteres</span> </label>
+                        <textarea name="about" id="about"> </textarea>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="whatsapp">Número de Whatsapp</label>
+                        <input type="text" name="whatsapp" id="whatsapp">
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Visitação</legend>
+                </fieldset>
+
+            </form>
         </main>
 
     </div>
