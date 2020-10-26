@@ -56,7 +56,8 @@ fieldset legend {
 }
 
 .input-block input:focus,
-.input-block textarea:focus {
+.input-block textarea:focus,
+.input-block.images button:focus {
   border: 2px solid #01b3e3;
 }
 
@@ -86,10 +87,15 @@ fieldset legend {
   margin-top: 2.4rem;
   border-radius: 2rem;
   cursor: pointer;
+  outline: none;
 }
 
 .new-upload {
   position: relative;
+}
+
+.new-upload + .new-upload {
+  margin-top: 2.4rem;
 }
 
 .new-upload span {
