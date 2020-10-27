@@ -8,9 +8,13 @@ const server = express();
 // configurando arquivos estaticos (css, js)
 server.use(express.static('public'))
 
+    // Configurar template engine
+    .set('views', path.join(__dirname, "views"))
+    .set('view engine', 'hbs')
+
     // Configurando as rotas da aplicação
     .get('/', (request, response) => {
-        return response.sendFile(path.join(__dirname, 'views', 'index.html'));
+        return response.render('index')
     })
 
 server.listen(5500);
