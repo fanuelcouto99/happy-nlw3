@@ -1,0 +1,23 @@
+{
+  "name": "happy-nlw3",
+  "version": "1.0.0",
+  "description": "Plataforma desenvolvida durante a Semana Discovery 13, que incentivar visitas a orfanatos locais e assim incentivar mais adoções.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fanuelcouto99/happy-nlw3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fanuelcouto99/happy-nlw3/issues"
+  },
+  "homepage": "https://github.com/fanuelcouto99/happy-nlw3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
