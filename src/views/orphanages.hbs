@@ -1,63 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Localize um orfanato | Happy</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localize um orfanato | Happy</title>
 
-        <!-- Css para mapa da pagina - Usando biblioteca Leaflet -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <!-- Css para mapa da pagina - Usando biblioteca Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
 
-        <!-- Javascript para mapa da pagina - Usando biblioteca Leaflet -->
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    <!-- Javascript para mapa da pagina - Usando biblioteca Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
 
-        <link rel="icon" href="/assets/logo-icon.png">
+    <link rel="icon" href="/assets/logo-icon.png">
 
-        <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/css/animations.css">
-        <link rel="stylesheet" href="/css/page-orphanages.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/page-orphanages.css">
 
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
-    </head>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
 
-    <body>
+<body>
 
-        <div id="page-orphanages">
+    <div id="page-orphanages">
 
-            <!-- Barra Lateral da Pagina -->
-            <aside class="animate-right">
-                <!-- Cabeçalho da Barra Lateral -->
-                <header>
-                    <img src="/assets/map-marker.svg" alt="Happy">
+        <!-- Barra Lateral da Pagina -->
+        <aside class="animate-right">
+            <!-- Cabeçalho da Barra Lateral -->
+            <header>
+                <img src="/assets/map-marker.svg" alt="Happy">
 
-                    <h2>Escolha um orfanato no mapa</h2>
+                <h2>Escolha um orfanato no mapa</h2>
 
-                    <p>Muitas crianças estão esperando sua visita :)</p>
-                </header>
+                <p>Muitas crianças estão esperando sua visita :)</p>
+            </header>
 
-                <!-- Rodapé da Barra Lateral -->
-                <footer>
-                    <strong>Itaperuna</strong>
-                    <p>Rio de Janeiro</p>
-                </footer>    
-            </aside>
+            <!-- Rodapé da Barra Lateral -->
+            <footer>
+                <strong>Itaperuna</strong>
+                <p>Rio de Janeiro</p>
+            </footer>
+        </aside>
 
-            <!-- Mapa GPS dos orfanatos -->
-            <div id="mapid" class="animate-appear">
-
-            </div>
-
-            <a href="/create-orphanage" class="create-orphanage" title="Cadastre um orfanato">
-                <img src="/assets/plus.svg" alt="Criar orfanato">
-            </a>
+        <!-- Mapa GPS dos orfanatos -->
+        <div id="mapid" class="animate-appear">
 
         </div>
 
-        <!-- Adicionado script para criação do mapa -->
-        <script src="/scripts/page-orphanages.js"></script>
+        <div class="orphanages">
+            {{!-- Estrutura de repetição com template engine HBS para criação de dados dinamicos na pagina --}}
+            {{#each orphanages}}
 
-    </body>
+                {{!--Span escondido para conter os dados para exibição do mapa  --}}
+                <span hidden data-id="{{this.id}}" data-name="{{this.name}}" data-lat="{{this.lat}}"
+                    data-lng="{{this.lng}}">
+                </span>
+
+            {{/each}}
+        </div>
+
+        <a href="/create-orphanage" class="create-orphanage" title="Cadastre um orfanato">
+            <img src="/assets/plus.svg" alt="Criar orfanato">
+        </a>
+
+    </div>
+
+    <!-- Adicionado script para criação do mapa -->
+    <script src="/scripts/page-orphanages.js"></script>
+
+</body>
 
 </html>
