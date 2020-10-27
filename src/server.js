@@ -1,6 +1,9 @@
 // Configurando caminho dos arquivos para evitar erros ao rodar no windows
 const path = require('path');
 
+// Configurando importação das funções para exibir as paginas
+const pages = require('./pages');
+
 // Configurando servidor
 const express = require('express');
 const server = express();
@@ -13,8 +16,9 @@ server.use(express.static('public'))
     .set('view engine', 'hbs')
 
     // Configurando as rotas da aplicação
-    .get('/', (request, response) => {
-        return response.render('index')
-    })
+    .get('/', pages.index)
+    .get('/orphanage', pages.orphanage)
+    .get('/orphanages', pages.orphanages)
+    .get('/create-orphanage', pages.createOrphanage)
 
 server.listen(5500);
