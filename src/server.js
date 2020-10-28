@@ -6,10 +6,14 @@ const pages = require('./pages');
 
 // Configurando servidor
 const express = require('express');
+const saveOrphanage = require('./database/saveOrphanage');
 const server = express();
 
 // configurando arquivos estaticos (css, js)
 server.use(express.static('public'))
+
+    // Configurando para usar req.body e pegar dados via POST
+    .use(express.urlencoded({extended: true}))
 
     // Configurar template engine
     .set('views', path.join(__dirname, "views"))
@@ -20,5 +24,6 @@ server.use(express.static('public'))
     .get('/orphanage', pages.orphanage)
     .get('/orphanages', pages.orphanages)
     .get('/create-orphanage', pages.createOrphanage)
+    .post('/save-orphanage', pages.saveOrphanage)
 
 server.listen(5500);
