@@ -7,8 +7,12 @@ const options = {
     zoomControl: false
 }
 
+// Pegando coordenadas do banco para exibir o mapa
+const lat = document.querySelector('span[data-lat]').dataset.lat
+const lng = document.querySelector('span[data-lng]').dataset.lng
+
 // Código para criação do mapa - Usando biblioteca Leaflet
-const map = L.map('mapid', options).setView([-21.2034112, -41.8977974], 15);
+const map = L.map('mapid', options).setView([lat, lng], 15);
 
 // Adicionando o mapa na const criada
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
@@ -22,7 +26,7 @@ const icon = L.icon({
 });
 
 // Adicionado marcação para inserir popups
-L.marker([-21.2034112, -41.8977974], { icon }).addTo(map);
+L.marker([lat, lng], { icon }).addTo(map);
 
 // Função para alterar a imagem principal da galeria
 function selectImage(event) {
