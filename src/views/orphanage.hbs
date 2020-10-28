@@ -55,9 +55,9 @@
 
                     {{!-- Criando estrutura de repetição para criar imagens com template engine --}}
                     {{#each orphanage.images}}
-                    <button onclick="selectImage(event)" class="active" type="button">
-                        <img src="{{this}}" alt="{{orphanage.name}}">
-                    </button>
+                        <button onclick="selectImage(event)" class="active" type="button">
+                            <img src="{{this}}" alt="{{orphanage.name}}">
+                        </button>
                     {{/each}}
 
                 </div>
@@ -72,7 +72,7 @@
                         <div id="mapid"></div>
 
                         {{!-- span oculta com as informações do mapa --}}
-                        <span hidden data-lat="{{orphanage.lat}}" data-lng="{{orphanage.lng}}">
+                        <span data-lat="{{orphanage.lat}}" data-lng="{{orphanage.lng}}">
                         </span>
 
                         <footer>
@@ -113,10 +113,11 @@
 
                     </div>
 
-                    <button class="primary-button" type="button">
+                    <a href="https://api.whatsapp.com/send?l=pt_BR&phone={{orphanage.whatsapp}}" target="_blank"
+                        class="primary-button" type="button">
                         <img src="/assets/whatsapp.svg" alt="Chamar no Whatsapp">
                         Entrar em contato
-                    </button>
+                    </a>
 
                 </div>
             </div>
