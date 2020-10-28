@@ -90,3 +90,13 @@ function toggleSelect(event) {
     // verificar o valor do botão para atualizar
     input.value = button.dataset.value;
 }
+
+function validate(event) {
+    const lat = document.querySelector('[name="lat"]');
+    const lng = document.querySelector('[name="lng"]');
+    
+    if(lat.value == "" || lng.value == "") {
+        event.preventDefault();
+        alert('Selecione um ponto no mapa');
+    }
+}
