@@ -5,8 +5,8 @@ Database.then(async (db) => {
     // Inserir dados no banco
     await saveOrphanage(db, {
         lat: "-21.2034112",
-        lng: "-41.8977974",
-        name: "Pe. Geraldo",
+        lng: "-41.9177974",
+        name: "Lar dos Meninos",
         about: "Presta assistencia a crianças de 06 a 15 anos que se encontrem em situação de risco e/ou vulnerabilidade social.",
         whatsapp: "22999999999",
         images: [
@@ -19,17 +19,17 @@ Database.then(async (db) => {
         ].toString(),
         instructions: "Venha como se sentir a vontade e traga muito amor e paciência para dar!",
         opening_hours: "Horário de visitas Das 8h até as 18h",
-        open_on_weekends: "0"
+        open_on_weekends: "1"
     });
 
-    // Consultar dados do banco
-    const selectedOrphanages = await db.all("SELECT * FROM orphanages");
-    console.log(selectedOrphanages);
+    // // Consultar dados do banco
+    // const selectedOrphanages = await db.all("SELECT * FROM orphanages");
+    // console.log(selectedOrphanages);
 
-    //Consulta somente um orphanato pelo id
-    const orphanage = await db.all('SELECT * FROM orphanages WHERE id = "1"');
-    console.log(orphanage);
+    // //Consulta somente um orphanato pelo id
+    // const orphanage = await db.all('SELECT * FROM orphanages WHERE id = "1"');
+    // console.log(orphanage);
 
-    //Deletar dado da tabela
-    await db.run("DELETE FROM orphanages WHERE id = '4'");
+    // //Deletar dado da tabela
+    // await db.run("DELETE FROM orphanages WHERE id = '4'");
 })
